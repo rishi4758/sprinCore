@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd
+	">
+	
+<!--standalone list  -->
+	<util:list list-class="java.util.LinkedList" id="mybestfriend">
+	<value>aman</value>
+	<value>raman</value>
+	<value>ankit</value>
+	<value>rohit</value></util:list> 
+	<!--standalone map  -->
+	<util:map map-class="java.util.HashMap" id="myFee"> 
+	<entry key="Node" value="800000"/>
+	<entry key="react" value="800000"/>
+	</util:map>
+	
+		<!--standalone properties  -->
+		<util:properties id="myprops">
+		<prop key="name">Rishav</prop>
+		<prop key="email"> rishavrapat79@gmail.com</prop>
+		</util:properties>
+<bean  name="person1" class="com.corespring.standalone.collections.Person">
+<property  name="friends" ref="mybestfriend" >
+</property>
+</bean>
+<bean  name="person2" class="com.corespring.standalone.collections.Person">
+<property  name="friends" ref="mybestfriend" >
+</property>
+<property name="feeStructure" ref="myFee"></property>
+<property name="myProperties" ref="myprops"/>
+</bean>
+
+
+
+	</beans>
